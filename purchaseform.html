@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Eclectic Eye</title>
+    <link rel="stylesheet" href="/css/sharedstyle.css">
+    <link rel="stylesheet" href="/css/purchaseformstyle.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="/imgs/eclectic-eye-logo-icon.jpg"/>
+</head>
+
+<header>
+    <div class="nav-bar-title"><img class="nav-bar-title" src="/imgs/eclectic-eye-logo-text.jpg" alt="eclectic-eye-logo"></div>
+    <div class="nav-bar">
+        <a class="nav-link" href="/index.html">Home</a>
+        <a class="nav-link" href="/about.html">About</a>
+        <a class="nav-link" href="/contact.html">Contact</a>
+        <a class="nav-link" href="/gallery.html">Gallery</a>
+        <a class="nav-link" href="/purchaseform.html">Custom Candle Form</a>
+    </div>
+</header>
+
+<body>
+    <div class="flex-parent">
+        <h1>Custom Candle Form</h1>
+        <form class="app-form">
+            <!--Getting customer info-->
+            <h3>How can I contact you?</h3>
+            <div class="form-group">
+                <label for="input-name">Full Name:</label>
+                <input type="text" id="input-name" placeholder="Enter your full name" required="required">
+            </div>
+            <div class="form-group">
+                <label for="input-email" required="required">Email address:</label>
+                <input type="email" id="input-email" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="tel-input">Telephone:</label>
+                <input type="number" id="tel-input" placeholder="(555)-555-5555">
+            </div>
+            <divclass="form-group">
+
+            <!--Able to choose a candle from pre set collections-->
+            <h3>If you wish, select from one of our collections to act as a base for your candle!</h3>
+            <div class="form-group">
+                <p><label for="zodiac">Zodiac Collection</label></p>
+                <input type="radio" name="zodiac">Aries</input>
+                <input type="radio" name="zodiac">Aquarius</input>
+                <input type="radio" name="zodiac">Cancer</input>
+                <input type="radio" name="zodiac">Capricorn</input>
+                <input type="radio" name="zodiac">Gemini</input>
+                <input type="radio" name="zodiac">Leo</input>
+                <input type="radio" name="zodiac">Libra</input>
+                <input type="radio" name="zodiac">Pisces</input>
+                <input type="radio" name="zodiac">Sagittarius</input>
+                <input type="radio" name="zodiac">Scorpio</input>
+                <input type="radio" name="zodiac">Taurus</input>
+                <input type="radio" name="zodiac">Virgo</input>
+            </div>
+            <p><!--spacing--></p>
+            <div class="form-group">
+                <p><label for="emotions">Emotions Collection</label></p>
+                <input type="radio" name="emotions">Sweet Dreams</input>
+                <input type="radio" name="emotions">Tranquility</input>
+            </div>
+
+            <!--Pick size, color, scent, and crystals-->
+            <div class="form-group">
+                <h3>What size candle would you like?</h3>
+                <p>Note that price may need to be raised if specifications are intensive. I will contact you if this is the case.</p>
+                <input type="radio" name="size">Tealight ($5)</input>
+                <input type="radio" name="size">Small ($10)</input>
+                <input type="radio" name="size">Medium ($15)</input>
+                <input type="radio" name="size">Large ($20)</input>
+                <input type="radio" name="size">Extra Large ($25)</input>
+            </div>
+            <div class="form-group">
+                <h3><label for="color-input">What color would you like?</label></h3>
+                <textarea id="color-input"></textarea>
+            </div>
+            <div class="form-group">
+                <h3><label for="scent-input">What scent would you like? Be as specific or as vague as you like!</label></h3>
+                <textarea id="scent-input"></textarea>
+            </div>
+            <div class="form-group">
+                <h3><label for="crytal-input">Any specific crystals or flowers you would like to see on your candle?</label></h3>
+                <textarea id="crystal-input"></textarea>
+            </div>
+
+            <!--Other input-->
+             <div class="form-group">
+                <h3><label for="other-input">Any other specifications? Feel free to just describe a vibe you want!</label></h3>
+                <textarea id="other-input"></textarea>
+            </div>
+            <p><!--spacing--></p>
+            <p>Thank you for your interest! I will be in contact with you soon!</p>
+            </div>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+<footer></footer>
+</html>

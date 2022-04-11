@@ -1,0 +1,61 @@
+/*
+green: 11401
+pink: f5d4c1
+gold: e1a747
+yellow: f0e4b0
+*/
+/*adding names to custom logo colors for easier use*/
+:root {
+    --malachite: #114401;
+    --opal: #f5d4c1;
+    --goldstone: #e1a747;
+    --pyrite: #f0e4b0;
+    
+}
+/*header bar*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    background-color: var(--malachite);
+    height: 70px;
+    padding: 20px;
+    position: sticky;
+    margin: 5px;
+    box-shadow: 4px 4px 4px rgb(9, 37, 9);
+}
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+}
+.nav-bar-title {
+    align-self: left;
+    flex-grow: 1;
+    object-fit: contain;
+    max-height: 100%;
+    width: auto;
+}
+.nav-link {
+    color: var(--pyrite);
+    font-size: larger;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+}
+.nav-link:hover {
+    color: var(--goldstone);
+}
+
+/*body*/
+body {
+    background-color: #11440160;
+    margin: 0px;
+}
+.flex-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
