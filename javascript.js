@@ -10,13 +10,12 @@ B3. A menu that slides down or out from the Left or Top of the screen (slideDown
 var d = new Date();
 var time = d.getHours();
 var alerted = localStorage.getItem('alerted') || '';
-alert(d.getDay);
 
 /*check if user has already recieved time alert
 to ensure they don't recieve everytime they go to home page*/
 if (alerted != 'yes') {
     localStorage.setItem('alerted','yes');
-    var dayAlerted = d.getDay;
+    var dayAlerted = d.getDate();
     if (time < 12) {
         alert("Good morning!");
     }
@@ -27,7 +26,7 @@ if (alerted != 'yes') {
         alert("Good evening!");
     }
 } else { //reset alert if it is a new day
-    if (dayAlerted != d.getDay) {
+    if (dayAlerted != d.getDate()) {
         localStorage.setItem('alerted','no');
     }
 }
