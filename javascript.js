@@ -10,11 +10,11 @@ var d = new Date();
 var time = d.getHours();
 
 if (time < 12) {
-  document.write("<b>Good morning!</b>");
+  alert("<b>Good morning!</b>");
 }
-if (time > 12) {
-  document.write("<b>Good afternoon!</b>");
+if (time > 12 & time < 17) {
+  alert("<b>Good afternoon!</b>");
 }
-if (time == 12) {
-  document.write("<b>Go eat lunch!</b>");
+if (time > 17) {
+  alert("<b>Good night!</b>");
 }
