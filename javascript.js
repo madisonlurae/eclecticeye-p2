@@ -27,7 +27,7 @@ if (alerted != 'yes') {
     }
 } else { //reset alert if it is a new day
     if (dayAlerted != d.getDate()) {
-        alert(dayAlerted, d.getDate())
+        alert(dayAlerted + d.getDate());
         localStorage.setItem('alerted','no');
     }
 }
