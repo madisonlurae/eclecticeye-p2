@@ -43,7 +43,7 @@ header {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
     color: var(--pyrite);
-    font-size: larger;
+    font-size: x-large;
     text-decoration: none;
     padding: 10px;
     margin: 10px;
@@ -51,7 +51,6 @@ header {
 
 .invis-button {
     display: flex;
-    size: 20%;
     border: none;
     background-color: var(--malachite);
 }
