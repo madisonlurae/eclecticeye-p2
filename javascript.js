@@ -28,10 +28,8 @@ if (alerted != 'yes') {
 }
 
 //BUTTON FADE OUT
-/*
 
 let navButton = document.getElementsByClassName("nav-link");
-document.getElementsByClassName("nav-link").onmouseover = function () {
-  navButton.classList.toggle("fade");
+navButton.onmouseover = function () {
+  navButton.toggle("fade");
 };
-*/
