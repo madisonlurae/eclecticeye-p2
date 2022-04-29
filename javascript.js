@@ -25,23 +25,10 @@ if (alerted != 'yes') {
     if (time > 17) {
         alert("Good evening!");
     }
-} 
+}
 
 //BUTTON FADE OUT
 /*
-navButton = new HTMLElement;
-navButton = document.getElementById("nav-link");
-navButton.onmouseover = function() {var op = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op <= 0.1){
-            clearInterval(timer);
-            element.style.display = 'none';
-        }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }, 50);
-};
 
 let navButton = document.getElementsByClassName("nav-link");
 document.getElementsByClassName("nav-link").onmouseover = function () {
