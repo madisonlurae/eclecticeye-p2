@@ -49,8 +49,9 @@ header {
     margin: 10px;
 }
 
-.nav-link.fade {
-    opacity: .1;
+.invis-button {
+    border: none;
+    background-color: none;
 }
 
 
