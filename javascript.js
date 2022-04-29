@@ -12,7 +12,7 @@ var time = d.getHours();
 
 if (time < 12) {
     alert(time);
-    morning;
+    //morning;
 }
 if (time > 12 & time < 17) {
     alert("Good afternoon!");
