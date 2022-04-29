@@ -8,7 +8,7 @@ B3. A menu that slides down or out from the Left or Top of the screen (slideDown
 
 var d = new Date();
 var time = d.getHours();
-var morning = alert("Good morning!");
+//var morning = alert("Good morning!");
 
 if (time < 12) {
     alert(time);
