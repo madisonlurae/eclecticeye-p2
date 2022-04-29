@@ -11,13 +11,14 @@ var time = d.getHours();
 var morning = alert("Good morning!");
 
 if (time < 12) {
-  morning;
+    alert(time);
+    morning;
 }
 if (time > 12 & time < 17) {
-  alert("Good afternoon!");
+    alert("Good afternoon!");
 }
 if (time > 17) {
-  alert("Good evening!");
+    alert("Good evening!");
 /*
 var alerted = localStorage.getItem('alerted') || '';
 if (alerted != 'yes') {
