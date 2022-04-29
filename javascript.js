@@ -14,8 +14,6 @@ var alerted = localStorage.getItem('alerted') || '';
 //to ensure they don't recieve everytime they go to home page
 if (alerted != 'yes') {
     localStorage.setItem('alerted','yes');
-}
-else {
     if (time < 12) {
         alert("Good morning!");
     }
@@ -26,7 +24,6 @@ else {
         alert("Good evening!");
     }
 }
-
 
 
 
