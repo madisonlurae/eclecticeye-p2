@@ -51,6 +51,7 @@ header {
 
 .invis-button {
     display: flex;
+    size: 20%;
     border: none;
     background-color: var(--malachite);
 }
