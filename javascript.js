@@ -27,8 +27,22 @@ if (alerted != 'yes') {
         alert("Good evening!");
     }
 } else { //reset alert if it is a new day
-    if (dayAlerted != d.getDate()) {
-        alert("alert" + dayAlerted + "d" + d.getDate());
-        localStorage.setItem('alerted','no');
-    }
+
+}
+
+//BUTTON FADE OUT
+navButton = new HTMLElement;
+navButton = document.getElementById("nav-link");
+navButton.onmouseover = function(fade) {mouseOver()};
+function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
 }
