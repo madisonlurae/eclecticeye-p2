@@ -8,22 +8,27 @@ B3. A menu that slides down or out from the Left or Top of the screen (slideDown
 
 var d = new Date();
 var time = d.getHours();
-
-if (time < 12) {
-    alert("Good morning!");
-}
-if (time > 12 & time < 17) {
-    alert("Good afternoon!");
-}
-if (time > 17) {
-    alert("Good evening!");
-}
-
 var alerted = localStorage.getItem('alerted') || '';
+
+//check if user has already recieved time alert
+//to ensure they don't recieve everytime they go to home page
 if (alerted != 'yes') {
-    alert("My alert.");
     localStorage.setItem('alerted','yes');
 }
+else {
+    if (time < 12) {
+        alert("Good morning!");
+    }
+    if (time > 12 & time < 17) {
+        alert("Good afternoon!");
+    }
+    if (time > 17) {
+        alert("Good evening!");
+    }
+}
+
+
+
 
 /*
 function createCookie(name, value, days) {
