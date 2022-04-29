@@ -10,11 +10,18 @@ var d = new Date();
 var time = d.getHours();
 
 if (time < 12) {
-  alert("<b>Good morning!</b>");
+  alert("Good morning!");
 }
 if (time > 12 & time < 17) {
-  alert("<b>Good afternoon!</b>");
+  alert("Good afternoon!");
 }
 if (time > 17) {
-  alert("<b>Good night!</b>");
+  alert("Good evening!");
+
+var alerted = localStorage.getItem('alerted') || '';
+if (alerted != 'yes') {
+  alert("My alert.");
+  localStorage.setItem('alerted','yes');
+}
+
 }
