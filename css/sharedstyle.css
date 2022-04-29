@@ -40,8 +40,6 @@ header {
     width: auto;
 }
 .nav-link {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
     color: var(--pyrite);
     font-size: x-large;
     text-decoration: none;
@@ -50,11 +48,16 @@ header {
 }
 
 .invis-button {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
     display: flex;
     border: none;
     background-color: var(--malachite);
 }
 
+.invis-button.fade {
+    opacity: .1;
+}
 
 /*body*/
 body {

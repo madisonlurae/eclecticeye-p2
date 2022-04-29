@@ -36,6 +36,6 @@ navButton.onmouseover = function () {
 */
 (document).ready(function(){
     ("button").onmouseover(function(){
-        (".invis-button").fadeToggle();
+        (".invis-button").toggle("fade");
     });
 });
