@@ -35,7 +35,7 @@ navButton.onmouseover = function () {
 };
 */
 (document).ready(function(){
-    ("a").onmouseover(function(){
+    ("href").onmouseover(function(){
         (".nav-link").fadeToggle();
     });
 });
