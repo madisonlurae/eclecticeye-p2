@@ -10,13 +10,12 @@ B3. A menu that slides down or out from the Left or Top of the screen (slideDown
 var d = new Date();
 var time = d.getHours();
 var alerted = localStorage.getItem('alerted') || '';
-var dayAlerted = -1;
+
 
 /*check if user has already recieved time alert
 to ensure they don't recieve everytime they go to home page*/
 if (alerted != 'yes') {
     localStorage.setItem('alerted','yes');
-    dayAlerted = d.getDate();
     if (time < 12) {
         alert("Good morning!");
     }
@@ -44,7 +43,7 @@ navButton.onmouseover = function() {var op = 1;  // initial opacity
     }, 50);
 };
 */
-
+let navButton = document.getElementsByClassName("nav-link");
 document.getElementsByClassName("nav-link").onmouseover = function () {
-  nav-link.classList.toggle("fade");
+  navButton.classList.toggle("fade");
 };
