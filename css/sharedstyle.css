@@ -47,11 +47,11 @@ header {
     margin: 10px;
 }
 
-/*
-.nav-link:hover {
-    color: var(--goldstone);
+
+.nav-link.fade {
+    opacity: .1;
 }
-*/
+
 
 /*body*/
 body {
