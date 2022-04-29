@@ -42,8 +42,9 @@ navButton.onmouseover = function() {var op = 1;  // initial opacity
         op -= op * 0.1;
     }, 50);
 };
-*/
+
 let navButton = document.getElementsByClassName("nav-link");
 document.getElementsByClassName("nav-link").onmouseover = function () {
   navButton.classList.toggle("fade");
 };
+*/
