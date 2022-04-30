@@ -15,7 +15,7 @@ var alerted = localStorage.getItem('alerted') || '';
 to ensure they don't recieve everytime they go to home page*/
 if (alerted != 'yes') {
     localStorage.setItem('alerted','yes');
-    var dayAlerted = d;
+    var dayAlerted = d.getDay;
     if (time < 12) {
         alert("Good morning!");
     }
@@ -26,7 +26,7 @@ if (alerted != 'yes') {
         alert("Good evening!");
     }
 } else { //reset alert if it is a new day
-    if (dayAlerted != d) {
+    if (dayAlerted != d.getDay) {
         localStorage.setItem('alerted','no');
     }
 }
