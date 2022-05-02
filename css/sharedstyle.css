@@ -1,71 +1,83 @@
-/*
-green: 11401
-pink: f5d4c1
-gold: e1a747
-yellow: f0e4b0
-*/
-/*adding names to custom logo colors for easier use*/
-
-:root {
-    --malachite: #114401;
-    --opal: #f5d4c1;
-    --goldstone: #e1a747;
-    --pyrite: #f0e4b0;
-    
-}
-/*header bar*/
+/*header is flexbox at top of screen*/
 header {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     align-content: center;
-    background-color: var(--malachite);
-    height: 70px;
-    padding: 20px;
-    position: sticky;
-    margin: 5px;
-    box-shadow: 4px 4px 4px rgb(9, 37, 9);
+    position: fixed;
+    top: 0;
+    max-height: 80px;
+    width: 100%;
 }
-.nav-bar {
+/*menu bar*/
+#menu {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 90%;
+    max-height: inherit;
+    background-color: #114401;
+    padding: 10px 35px 10px 35px;
+    opacity: 100%;
+}
+/*nav-bar contains the nav-links*/
+#nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-self: center;
+    opacity: 100%;
 }
-.nav-bar-title {
+/*the picture logo on the left of the menu bar*/
+#menu-bar-logo {
     align-self: left;
     flex-grow: 1;
     object-fit: contain;
     max-height: 100%;
     width: auto;
 }
+/*links to the other pages*/
 .nav-link {
-    color: var(--pyrite);
+    color: #f0e4b0;
     font-size: x-large;
     text-decoration: none;
     padding: 10px;
     margin: 10px;
+    background-color: transparent;
 }
 
-.invis-button {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+/*button to hide/show the menu bar*/
+#menu-slide {
     display: flex;
-    border: none;
-    background-color: var(--malachite);
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-grow: 1;
+    top: 0;
+    height: 80px;
+    background-color: #114401;
 }
-
-.invis-button.fade {
-    opacity: .1;
+.hide-button {
+    color: grey;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
 }
 
 /*body*/
 body {
-    background-color: #11440160;
+    background-color: #ffffff;
     margin: 0px;
+    
 }
+/*body is a flex box*/
 .flex-parent {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin: 100px 35px 100px 35px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
 }

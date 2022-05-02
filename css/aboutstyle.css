@@ -1,9 +1,7 @@
-.about-box {
+#about-box {
     display: flex;
     flex-direction: row;
-    margin: 35px;
     background-color: #1144019f;
-    padding: 20px;
 }
 
 #electra-picture {

@@ -7,24 +7,30 @@
     <link rel="stylesheet" href="/css/indexstyle.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" type="image/jpg" href="/imgs/eclectic-eye-logo-icon.jpg"/>
-    <!--<script src="/javascript.js"></script>-->
+    <script src="js/javascript.js"></script>
 </head>
 
 <header>
-    <div class="nav-bar-title"><img class="nav-bar-title" src="/imgs/eclectic-eye-logo-text.jpg" alt="eclectic-eye-logo"></div>
-    <div class="nav-bar">
-        <button class="invis-button"><a class="nav-link" href="/index.html">Home</a></button>
-        <button class="invis-button"><a class="nav-link" href="/about.html">About</a></button>
-        <button class="invis-button"><a class="nav-link" href="/contact.html">Contact</a></button>
-        <button class="invis-button"><a class="nav-link" href="/gallery.html">Gallery</a></button>
-        <button class="invis-button"><a class="nav-link" href="/purchaseform.html">Custom Candle Form</a></button>
+    <div id="menu">
+        <div id="menu-bar-logo"><img id="menu-bar-logo" src="/imgs/eclectic-eye-logo-text.jpg" alt="eclectic eye logo"></div>
+        <div id="nav-bar">
+            <a class="nav-link" href="/index.html">Home</a>
+            <a class="nav-link" href="/about.html">About</a>
+            <a class="nav-link" href="/contact.html">Contact</a>
+            <a class="nav-link" href="/gallery.html">Gallery</a>
+            <a class="nav-link" href="/purchaseform.html">Custom Candle Form</a>
+        </div>
+    </div>
+    <div id="menu-slide">
+        <button class="hide-button" onclick="slideUpClass('nav-link'), slideUpID('menu');">Collapse</button>
+        <button class="hide-button" onclick="slideDownClass('nav-link'), slideDownID('menu');">Expand</button>
     </div>
 </header>
 
 <body>
     <div class="flex-parent">
         <div class="banner-box">
-            <img id="logo" src="/imgs/eclectic-eye-logo.jpg" alt="eclectic-eye-logo">
+            <img id="logo" src="/imgs/eclectic-eye-logo.jpg" alt="eclectic eye logo">
             <div class="tagline-box">
                 <p class="tagline">100% Natural</p>
                 <p class="tagline">100% Homemade</p>
