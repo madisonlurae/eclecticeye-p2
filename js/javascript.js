@@ -21,6 +21,7 @@ D5. A Javascript object
 
 //TIME OF DAY ALERT
 /*REQUIREMENT: global variable*/
+var dayAlerted;
 var d = new Date();
 var time = d.getHours();
 var alerted = localStorage.getItem('alerted') || '';
@@ -31,6 +32,7 @@ to ensure they don't recieve everytime they go to home page*/
 /*REQUIREMENT: conditional statement*/
 if (alerted != 'yes') {
     localStorage.setItem('alerted','yes');
+    dayAlerted = new Date().getDate();
     if (time < 12) {
         alert("Good morning!");
     }
@@ -39,6 +41,11 @@ if (alerted != 'yes') {
     }
     if (time > 17) {
         alert("Good evening!");
+    }
+} else if (dayAlerted) {  //make sure dayAlerted isnt null
+    //users will be greeted only once per day
+    if (dayAlerted != d.getDate()) {
+        localStorage.setItem('alerted','no');
     }
 }
 
