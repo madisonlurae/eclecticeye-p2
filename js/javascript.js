@@ -1,9 +1,7 @@
 /*
-B1. A dynamic greeting - the website should greet your users with the phrase, "Good morning", "Good afternoon", or "Good evening" depending on the LOCAL time of your user.
-
 B2. Change in button style for the currently selected button (consider fadeIn, fadeOut or fadeToogle)
 
-B3. A menu that slides down or out from the Left or Top of the screen (slideDown, slideUp, slideToggle).
+D5. A Javascript object
 */
 
 //TIME OF DAY ALERT

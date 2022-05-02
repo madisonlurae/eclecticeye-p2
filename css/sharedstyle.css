@@ -44,6 +44,10 @@ header {
     margin: 10px;
     background-color: transparent;
 }
+.nav-link:hover{
+    opacity: 75%;
+    background-color: #000000;
+}
 
 /*button to hide/show the menu bar*/
 #menu-slide {
