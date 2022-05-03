@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
                     echo "Please fill all fields";
                 }
-            ?>
+            ?><br>
             <label>User Name</label>
             <input type="text" name="user_name" placeholder="Username"><br>
             <label>Password</label>
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     Start with a letter\n
                     Only contain special characters ! @ # $ %\n";
                 }
-            ?>
+            ?><br>
             <label>First Name</label>
             <input type="text" name="fname" placeholder="First Name"><br>
             <label>Last Name</label>

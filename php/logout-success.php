@@ -20,7 +20,7 @@ include("connect-db.php");
 	<p>Redirecting to our home page, just a moment...</p>
 
 	<?php 
-		header( "refresh:5;url=../index.html" );
+		header("refresh:3;url=../index.html");
 	?>
 </body>
 </html>
