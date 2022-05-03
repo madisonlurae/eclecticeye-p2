@@ -3,9 +3,9 @@
 Use comments to note where you completed this activity.
 You may do this in a variety of ways. Consider using this to control images.
 
-C2. Use RegEx to check passwords against a reasonable set of criteria.
 
-C3. Your login must account for errors. You must also change the style of the incorrect form element.
+C3. --Your login must account for errors----. 
+You must also change the style of the incorrect form element.
 You could highlight incorrect elements with a red boarder.
 
 C4. Create a password reset. Your user information should be stored in the database and updated OR may be processed in a PHP page and simply displayed to users.
@@ -25,7 +25,7 @@ D5. A Javascript object
 
 //TIME OF DAY ALERT
 /*REQUIREMENT: global variable*/
-var dayAlerted;
+//var dayAlerted; //could not get this to work properly. supposed to give greeting again after 1 day
 var d = new Date();
 var time = d.getHours();
 var alerted = localStorage.getItem('alerted') || '';
@@ -36,7 +36,7 @@ to ensure they don't recieve everytime they go to home page*/
 /*REQUIREMENT: conditional statement*/
 if (alerted != 'yes') {
     localStorage.setItem('alerted','yes');
-    dayAlerted = new Date().getDate();
+    //dayAlerted = new Date().getDate();
     if (time < 12) {
         alert("Good morning!");
     }
@@ -46,12 +46,12 @@ if (alerted != 'yes') {
     if (time > 17) {
         alert("Good evening!");
     }
-} else if (dayAlerted) {  //make sure dayAlerted isnt null
+} /*else if (dayAlerted) {  //make sure dayAlerted isnt null
     //users will be greeted only once per day
     if (dayAlerted != d.getDate()) {
         localStorage.setItem('alerted','no');
     }
-}
+}*/
 
 
 //BUTTON FADE OUT
