@@ -1,13 +1,4 @@
 /*
-6. Your site must support distinct layouts for large and small screens using media queries. 
-Use comments to note where you completed this activity.
-You may do this in a variety of ways. Consider using this to control images.
-
-
-C3. --Your login must account for errors----. 
-You must also change the style of the incorrect form element.
-You could highlight incorrect elements with a red boarder.
-
 C4. Create a password reset. Your user information should be stored in the database and updated OR may be processed in a PHP page and simply displayed to users.
 
 
@@ -19,13 +10,22 @@ create orders for food. If you are not sure what to do, talk to your professor.
 3. Your website should allow for the addition, display and deletion of information from the 
 database. 
 
+final: the report
+
+6. Your site must support distinct layouts for large and small screens using media queries. 
+Use comments to note where you completed this activity.
+You may do this in a variety of ways. Consider using this to control images.
 
 D5. A Javascript object
+
+C3. --Your login must account for errors----. 
+You must also change the style of the incorrect form element.
+You could highlight incorrect elements with a red boarder.
 */
 
 //TIME OF DAY ALERT
-/*REQUIREMENT: global variable*/
 //var dayAlerted; //could not get this to work properly. supposed to give greeting again after 1 day
+/*REQUIREMENT: global variable*/
 var d = new Date();
 var time = d.getHours();
 var alerted = localStorage.getItem('alerted') || '';
