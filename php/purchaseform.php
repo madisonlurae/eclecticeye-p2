@@ -23,8 +23,8 @@ session_start();
         //make sure fields were not empty
         if (!empty($collection) && !empty($size) && !empty($color) && !empty($scent) && !empty($crystal)) {
              //save to database
-             //order_id auto increments, dont need to explicitly insert
-             $query = "INSERT INTO `orders` (`user_id`, `base`, `size`, `color`, 'scent', 'crystals') VALUES ('$userFK', '$collection', '$size', '$color', '$scent', '$crystal')";
+             //order_id auto increments, insert as default
+             $query = "INSERT INTO `orders` VALUES (DEFAULT, 'Admin', 'Leo', 'Small', 'Base', 'Lavender', 'Onyx')";
              mysqli_query($con, $query);
              //bring to login page on success
              header("Location: login-page.php");
