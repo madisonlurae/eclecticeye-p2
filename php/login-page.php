@@ -9,7 +9,7 @@ session_start();
     $_SESSION['user'];
 
     //first things first, if already logged in, redirect to account page 
-    if (isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user'])) {
         header("Location: ../account.html");
     }
 
