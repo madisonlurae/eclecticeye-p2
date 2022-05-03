@@ -2,43 +2,43 @@
 
 session_start();
 
-include("connect-db.php");
+    include("connect-db.php");
 
-//make sure form was posted
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	//variables for the provided user and pass
-    echo "posted";
-	$user_name = $_POST['user_name'];
-	$password = $_POST['password'];
+    //make sure form was posted
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        //variables for the provided user and pass
+        echo "posted";
+        $user_name = $_POST['user_name'];
+        $password = $_POST['password'];
 
-	//make sure fields were not empty
-	if (!empty($user_name) && !empty($password)) {
-		//get user from database that matches username
-		$query = "select * from eclectic_eye_login where username = '$user_name' limit 1";
-		$result = mysqli_query($con, $query);
-		
-		//if username exists
-		if ($result) {
-			if ($result && mysqli_num_rows($result) > 0) {
-                //array with users info
-    			$user_data = mysqli_fetch_assoc($result);
-				//if correct password is given
-				if ($user_data['password'] === $password) {
-					//start session and redirect
-					$_SESSION['user'] = $user_data['username'];
-					header("Location: login-success.php");
-					die;
-				} else {
-					echo "Invalid password";
-				}
-			}
-		}
-		//reaches here if username is not found
-		echo "Invalid username";
-	//reaches here if fields were empty
-	} else {
-		echo "Please fill all fields";
-	}
+        //make sure fields were not empty
+        if (!empty($user_name) && !empty($password)) {
+            //get user from database that matches username
+            $query = "select * from eclectic_eye_login where username = '$user_name' limit 1";
+            $result = mysqli_query($con, $query);
+            
+            //if username exists
+            if ($result) {
+                if ($result && mysqli_num_rows($result) > 0) {
+                    //array with users info
+                    $user_data = mysqli_fetch_assoc($result);
+                    //if correct password is given
+                    if ($user_data['password'] === $password) {
+                        //start session and redirect
+                        $_SESSION['user'] = $user_data['username'];
+                        header("Location: login-success.php");
+                        die;
+                    } else {
+                        echo "Invalid password";
+                    }
+                }
+            }
+            //reaches here if username is not found
+            echo "Invalid username";
+        //reaches here if fields were empty
+        } else {
+            echo "Please fill all fields";
+        }
 }
 ?>
 
