@@ -13,9 +13,6 @@ C4. Create a password reset. Your user information should be stored in the datab
 C5. Users should be able to log out.
 This can be accomplished with a "Logout" button that displays a PHP page that states the user is logged out OR remove the user from the database.
 
-C6. Create a user named Admin with a password. Put the password in your report.
-If you make your password "password", you will fail this requirement. Admins who login correctly can be given a PHP page that states they successfully logged in.
-
 D5. A Javascript object
 */
 
