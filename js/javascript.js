@@ -1,6 +1,4 @@
 /*
-C4. Create a password reset. Your user information should be stored in the database and updated OR may be processed in a PHP page and simply displayed to users.
-
 
 1. You should have a minimum of two tables with a PK/FK relationship. They must have a 
 1:M relationship - you may add unlimited additional tables if you wish. 

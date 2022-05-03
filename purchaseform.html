@@ -31,50 +31,35 @@
 <body>
     <div class="flex-parent">
         <h1>Custom Candle Form</h1>
-        <form class="app-form">
-            <!--Getting customer info-->
-            <h3>How can I contact you?</h3>
+        <form class="order-form">
+            <!--Choose a candle from pre set collections-->
+            <h2>Please select from one of our collections to act as a base for your candle!</h2>
+            <p>For all other opions below, select 'Base' to keep the default quality of your base candle.</p>
             <div class="form-group">
-                <label for="input-name">Full Name:</label>
-                <input type="text" id="input-name" placeholder="Enter your full name" required="required">
-            </div>
-            <div class="form-group">
-                <label for="input-email" required="required">Email address:</label>
-                <input type="email" id="input-email" placeholder="Enter your email address">
-            </div>
-            <div class="form-group">
-                <label for="tel-input">Telephone:</label>
-                <input type="number" id="tel-input" placeholder="(555)-555-5555">
-            </div>
-            <divclass="form-group">
-
-            <!--Able to choose a candle from pre set collections-->
-            <h3>If you wish, select from one of our collections to act as a base for your candle!</h3>
-            <div class="form-group">
-                <p><label for="zodiac">Zodiac Collection</label></p>
-                <input type="radio" name="zodiac">Aries</input>
-                <input type="radio" name="zodiac">Aquarius</input>
-                <input type="radio" name="zodiac">Cancer</input>
-                <input type="radio" name="zodiac">Capricorn</input>
-                <input type="radio" name="zodiac">Gemini</input>
-                <input type="radio" name="zodiac">Leo</input>
-                <input type="radio" name="zodiac">Libra</input>
-                <input type="radio" name="zodiac">Pisces</input>
-                <input type="radio" name="zodiac">Sagittarius</input>
-                <input type="radio" name="zodiac">Scorpio</input>
-                <input type="radio" name="zodiac">Taurus</input>
-                <input type="radio" name="zodiac">Virgo</input>
+                <p><label>Zodiac Collection</label></p>
+                <input type="radio" name="collection">Aries</input>
+                <input type="radio" name="collection">Aquarius</input>
+                <input type="radio" name="collection">Cancer</input>
+                <input type="radio" name="collection">Capricorn</input>
+                <input type="radio" name="collection">Gemini</input>
+                <input type="radio" name="collection">Leo</input>
+                <input type="radio" name="collection">Libra</input>
+                <input type="radio" name="collection">Pisces</input>
+                <input type="radio" name="collection">Sagittarius</input>
+                <input type="radio" name="collection">Scorpio</input>
+                <input type="radio" name="collection">Taurus</input>
+                <input type="radio" name="collection">Virgo</input>
             </div>
             <p><!--spacing--></p>
             <div class="form-group">
-                <p><label for="emotions">Emotions Collection</label></p>
-                <input type="radio" name="emotions">Sweet Dreams</input>
-                <input type="radio" name="emotions">Tranquility</input>
+                <p><label>Emotions Collection</label></p>
+                <input type="radio" name="collection">Sweet Dreams</input>
+                <input type="radio" name="collection">Tranquility</input>
             </div>
 
             <!--Pick size, color, scent, and crystals-->
             <div class="form-group">
-                <h3>What size candle would you like?</h3>
+                <h2>What size candle would you like?</h2>
                 <p>Note that price may need to be raised if specifications are intensive. I will contact you if this is the case.</p>
                 <input type="radio" name="size">Tealight ($5)</input>
                 <input type="radio" name="size">Small ($10)</input>
@@ -83,25 +68,50 @@
                 <input type="radio" name="size">Extra Large ($25)</input>
             </div>
             <div class="form-group">
-                <h3><label for="color-input">What color would you like?</label></h3>
-                <textarea id="color-input"></textarea>
+                <h2><label for="color-input">What color would you like?</label></h2>
+                <select name="color-input">
+                    <option value="base">Base</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+
             </div>
             <div class="form-group">
-                <h3><label for="scent-input">What scent would you like? Be as specific or as vague as you like!</label></h3>
-                <textarea id="scent-input"></textarea>
+                <h2><label for="scent-input">What scent would you like?</label></h2>
+                <select name="scent-input">
+                    <option value="base">Base</option>
+                    <option value="lavander">Lavander</option>
+                    <option value="citrus">Citrus</option>
+                    <option value="pine">Pine</option>
+                    <option value="ocean-breeze">Ocean Breeze</option>
+                    <option value="floral">Floral</option>
+                    <option value="eygptian">Eygptian Musk</option>
+                </select>
             </div>
             <div class="form-group">
-                <h3><label for="crytal-input">Any specific crystals or flowers you would like to see on your candle?</label></h3>
-                <textarea id="crystal-input"></textarea>
+                <h2><label for="crytal-input">What type of crystal would you like?</label></h2>
+                <select name="crystal-input">
+                    <option value="base">Base</option>
+                    <option value="roseq">Rose Quartz</option>
+                    <option value="clearq">Clear Quartz</option>
+                    <option value="tiger">Tiger's Eye</option>
+                    <option value="amethyst">Amethyst</option>
+                    <option value="citrine">Citrine</option>
+                    <option value="iolite">Iolite</option>
+                    <option value="onyx">Onyx</option>
+                    <option value="jade">Jade</option>
+                </select>
             </div>
 
-            <!--Other input-->
-             <div class="form-group">
-                <h3><label for="other-input">Any other specifications? Feel free to just describe a vibe you want!</label></h3>
-                <textarea id="other-input"></textarea>
-            </div>
             <p><!--spacing--></p>
-            <p>Thank you for your interest! I will be in contact with you soon!</p>
+            <p>Thank you for your interest!</p>
+            <p><!--spacing--></p>
             <button type="submit" id="submit">Submit</button>
             </div>
         </form>

@@ -1,7 +1,6 @@
-.app-form {
+.order-form {
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
 .form-group {
@@ -15,4 +14,22 @@
 
 p {
     margin-top: 0px;
+}
+h3 {
+    font-weight: bolder;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background-color: #114401;
+    color:  #f0e4b0;
+    padding: 15px;
+    border: none;
+    margin-right: 10px;
+}
+button:hover{
+    opacity: 75%;
 }
