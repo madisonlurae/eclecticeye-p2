@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//make sure fields were not empty
 	if (!empty($user_name) && !empty($password) && !empty($fname) && !empty($lname)) {
 		//save to database
-		$query = "insert into users (username,password,firstname,lastname) values ('$user_name','$password','$fname','$lname',)";
+		$query = "INSERT INTO `users` (`username`, `password`, `firstname`, `lastname`) VALUES ('$user_name', '$password', '$fname', '$lname')";
 		mysqli_query($con, $query);
 		//bring to login page on success
 		header("Location: login-page.php");
@@ -65,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" name="user_name" placeholder="Username"><br>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br>
-            <label>User Name</label>
+            <label>First Name</label>
             <input type="text" name="fname" placeholder="First Name"><br>
-            <label>Password</label>
+            <label>Last Name</label>
             <input type="text" name="lname" placeholder="Last Name"><br> 
             <button id="login-button" type="submit">Create Account</button>
         </form>
