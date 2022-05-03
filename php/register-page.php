@@ -97,9 +97,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
             ?><br><br>
             <label>First Name</label>
-            <input type="text" name="fname" placeholder="First Name"><br>
+            <input type="text" name="fname" placeholder="First Name"><br><br><br>
             <label>Last Name</label>
-            <input type="text" name="lname" placeholder="Last Name"><br> 
+            <input type="text" name="lname" placeholder="Last Name"><br><br><br>
             <button id="login-button" type="submit">Create Account</button>
         </form>
     </div>
