@@ -1,8 +1,8 @@
 <?php
 session_start();
-$host = "localhost";
+$host = "143.198.12.22";
 $user = "root";
-$password = "";
+$password = "pandabear";
 $dbname = "eclectic-eye-login";
 
 $connect = mysqli_connect($host, $user, $password,$dbname);
