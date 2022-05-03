@@ -4,45 +4,31 @@ session_start();
 
     include("connect-db.php");
 
-    //first things first, if already logged in, redirect to account page 
-    if (isset($_SESSION['user'])) {
-        header("Location: ../account.html");
-    }
+    //get username
+    $name = $_SESSION['user'];
 
     //make sure form was posted
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //variables for the provided user and pass
         echo "posted";
-        $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
+        $new = $_POST['pass_new'];
 
         //make sure fields were not empty
-        if (!empty($user_name) && !empty($password)) {
-            //get user from database that matches username
-            $query = "select * from users where username = '$user_name' limit 1";
-            $result = mysqli_query($con, $query);
-            
-            //if username exists
-            if ($result) {
-                if ($result && mysqli_num_rows($result) > 0) {
-                    //array with users info
-                    $user_data = mysqli_fetch_assoc($result);
-                    //if correct password is given
-                    if ($user_data['password'] === $password) {
-                        //start session and redirect
-                        $_SESSION['user'] = $user_data['username'];
-                        header("Location: login-success.php");
-                        die;
-                    } else {
-                        header("Location: login-page.php?passmsg=failed");
-                    }
-                }
+        if (!empty($new)) {
+             //check password against regex
+            if (!preg_match("^(?=[^\d_].*?\d)\w(\w|[!@#$%]){4,20}$",$new)) {
+                header("Location: pass-reset-page.php?regmsg=failed");
+            } else {
+                //save to database
+                $query = "update user set password='$pass' where username='$name'";
+                mysqli_query($con, $query);
+                //bring to account page on success
+                header("Location: ../account.html");
+                die;
             }
-            //reaches here if username is not found
-            header("Location: login-page.php?usrmsg=failed");
         //reaches here if fields were empty
         } else {
-            header("Location: login-page.php?fieldmsg=failed");
+            header("Location: pass-reset-page.php?fieldmsg=failed");
         }
     }
 ?>
@@ -81,31 +67,28 @@ session_start();
 <body>
     <div class="flex-parent">
         <form method="post">
-            <h2>Login</h2>
+            <h2>Change Password</h2>
+
             <!--this will echo the fields are empty error msg-->
             <?php
                 if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
                     echo "Please fill all fields";
                 }
             ?><br><br>
-            <label>Username</label>
-            <input type="text" name="user_name" placeholder="Username"><br>
-            <!--this will echo the invalid username error msg-->
+
+            <label>New Password</label>
+            <input type="password" name="pass_new" placeholder="Password"><br> 
+            <!--this will echo the regex error msg-->
             <?php
-                if (isset($_GET["usrmsg"]) && $_GET["usrmsg"] == 'failed') {
-                    echo "Invalid username";
+                if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
+                    echo "Password must:\n";
+                    echo "Be 5-20 characters long\n";
+                    echo "Have at least one digit\n";
+                    echo "Start with a letter\n";
+                    echo "Only contain special characters ! @ # $ %\n";
                 }
             ?><br><br>
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Password"><br> 
-            <!--this will echo the incorrect password error msg-->
-            <?php
-                if (isset($_GET["passmsg"]) && $_GET["passmsg"] == 'failed') {
-                    echo "Password is incorrect";
-                }
-            ?><br><br>
-            <button id="login-button" type="submit">Login</button>
-            <a href="register-page.php"><button id="register-button" type="button">New? Create Account</button></a>
+            <button id="login-button" type="submit">Change</button>
         </form>      
     </div>
 </body>
