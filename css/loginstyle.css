@@ -30,8 +30,7 @@ input {
     border-radius: 5px;
 }
 
-#login-button {
-    float: right;
+button {
     background-color: #114401;
     color:  #f0e4b0;
     padding: 15px;
@@ -39,8 +38,15 @@ input {
     border-radius: 5px;
     margin-right: 10px;
 }
-#login-button:hover{
+button:hover{
     opacity: 75%;
+}
+#login-button {
+    float: right;
+
+}
+#register-button {
+    float: left;
 }
 
 .error {

@@ -1,3 +1,48 @@
+<?php 
+
+session_start();
+
+include("connect-db.php");
+include("functions.php");
+
+//make sure something was posted
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	//variables for the provided user and pass
+	$user_name = $_POST['user_name'];
+	$password = $_POST['password'];
+
+	//make sure fields were not empty
+	if (!empty($user_name) && !empty($password)) {
+		//get user from database that matches username
+		$query = "select * from eclectic_eye_login where username = '$user_name' limit 1";
+		$result = mysqli_query($con, $query);
+		
+		//if username exists
+		if ($result) {
+			if ($result && mysqli_num_rows($result) > 0) {
+                //array with users info
+    			$user_data = mysqli_fetch_assoc($result);
+				//if correct password is given
+				if ($user_data['password'] === $password) {
+					//start session and redirect
+					$_SESSION['user'] = $user_data['username'];
+					header("Location: login-success.php");
+					die;
+				} else {
+					echo "Invalid password";
+				}
+			}
+		}
+		//reaches here if username is not found
+		echo "Invalid username";
+	//reaches here if fields were empty
+	} else {
+		echo "Please fill all fields";
+	}
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -29,36 +74,15 @@
 
 <body>
     <div class="flex-parent">
-        <form action="config-login.php" method="post">
+        <form method="post">
             <h2>Login</h2>
-
-            <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-            <?php } ?>
-
             <label>Username</label>
-            <input type="text" name="username" placeholder="Username"><br>
+            <input type="text" name="user_name" placeholder="Username"><br>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br> 
             <button id="login-button" type="submit">Login</button>
-        </form>
-        <form action="/php/create-account.php" method="post">
-            <h2>New? Register</h2>
-
-            <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-            <?php } ?>
-
-            <label>User Name</label>
-            <input type="text" name="username" placeholder="User Name"><br>
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Password"><br>
-            <label>User Name</label>
-            <input type="text" name="fname" placeholder="First Name"><br>
-            <label>Password</label>
-            <input type="text" name="lname" placeholder="Last Name"><br> 
-            <button id="login-button" type="submit">Create Account</button>
-        </form>
+            <button id="register-button" type="submit">New? Create Account</button>
+        </form>      
     </div>
 </body>
 

@@ -1,3 +1,32 @@
+<?php 
+
+session_start();
+
+include("connect-db.php");
+
+//make sure something was posted
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	//variables for the provided user, pass, first name, and last name
+	$user_name = $_POST['user_name'];
+	$password = $_POST['password'];
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
+
+	//make sure fields were not empty
+	if (!empty($user_name) && !empty($password) && !empty($fname) && !empty($lname)) {
+		//save to database
+		$query = "insert into eclectic_eye_login (username,password,firstname,lastname) values ('$user_name','$password','$fname','$lname',)";
+		mysqli_query($con, $query);
+		//bring to login page on success
+		header("Location: login-page.php");
+		die;
+	} else {
+		echo "Please fill all fields";
+	}
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -29,28 +58,10 @@
 
 <body>
     <div class="flex-parent">
-        <form action="login.php" method="post">
-            <h2>Login</h2>
-
-            <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-            <?php } ?>
-
+		<form method="post">
+            <h2>Register</h2>
             <label>User Name</label>
-            <input type="text" name="uname" placeholder="User Name"><br>
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Password"><br> 
-            <button id="login-button" type="submit">Login</button>
-        </form>
-        <form action="/php/create-account.php" method="post">
-            <h2>New? Register</h2>
-
-            <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-            <?php } ?>
-
-            <label>User Name</label>
-            <input type="text" name="username" placeholder="User Name"><br>
+            <input type="text" name="user_name" placeholder="Username"><br>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br>
             <label>User Name</label>
@@ -64,3 +75,10 @@
 
 <footer></footer>
 </html>
+
+
+
+
+
+
+
