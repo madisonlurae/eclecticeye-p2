@@ -16,7 +16,7 @@ session_start();
         //make sure fields were not empty
         if (!empty($new)) {
              //check password against regex
-            if (!preg_match('/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/', $new)) {
+            if (!preg_match('^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,20}$', $new)) {
                 header("Location: pass-reset-page.php?regmsg=failed");
             } else {
                 //save to database
@@ -81,10 +81,11 @@ session_start();
             <!--this will echo the regex error msg-->
             <?php
                 if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
-                    echo "at least one lowercase char"; break;
-                    echo "at least one uppercase char"; break;
+                    echo "Password requirements not met:"; break;
+                    echo "at least one letter"; break;
                     echo "at least one digit"; break;
-                    echo "at least one special sign of @#-_$%^&+=§!?"; break;
+                    echo "only use special chars @#-_$%^&+=§!?"; break;
+                    echo "between 5 and 20 characters";
                 }
             ?><br><br>
             <button id="login-button" type="submit">Change</button>

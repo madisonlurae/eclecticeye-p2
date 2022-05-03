@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($result && mysqli_num_rows($result) > 0) {
             header("Location: register-page.php?takenmsg=failed");
         } //check password against regex
-        else if (!preg_match('/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/',$password)) {
+        else if (!preg_match('^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,20}$',$password)) {
             header("Location: register-page.php?regmsg=failed");
         } else {
             //save to database
@@ -89,10 +89,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <!--this will echo the regex error msg-->
             <?php
                 if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
-                    echo "at least one lowercase char"; break;
-                    echo "at least one uppercase char"; break;
+                    echo "Password requirements not met:"; break;
+                    echo "at least one letter"; break;
                     echo "at least one digit"; break;
-                    echo "at least one special sign of @#-_$%^&+=§!?"; break;
+                    echo "only use special chars @#-_$%^&+=§!?"; break;
+                    echo "between 5 and 20 characters";
                 }
             ?><br><br>
             <label>First Name</label>
