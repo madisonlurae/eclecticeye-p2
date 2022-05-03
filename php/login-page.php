@@ -4,6 +4,10 @@ session_start();
 
     include("connect-db.php");
 
+    //declaring global var
+    $user_data;
+    $_SESSION['user'];
+
     //first things first, if already logged in, redirect to account page 
     if (isset($_SESSION['user'])) {
         header("Location: ../account.html");

@@ -3,7 +3,8 @@
 session_start();
 
 include("connect-db.php");
-include("login-page.php");
+
+$name = $_SESSION['user'];
 
 ?>
 
@@ -17,7 +18,7 @@ include("login-page.php");
 	<h1>Login Successful!</h1><br>
 
 	<p>Hello!</p>
-	<?php echo $_SESSION['username'];?>
+	<?php echo $name;?>
 
 	<p>Redirecting to our home page, just a moment...</p>
 
