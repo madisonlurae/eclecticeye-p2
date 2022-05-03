@@ -16,7 +16,7 @@ session_start();
         //make sure fields were not empty
         if (!empty($user_name) && !empty($password)) {
             //get user from database that matches username
-            $query = "select * from eclectic_eye_login where username = '$user_name' limit 1";
+            $query = "select * from users where username = '$user_name' limit 1";
             $result = mysqli_query($con, $query);
             
             //if username exists

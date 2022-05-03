@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//make sure fields were not empty
 	if (!empty($user_name) && !empty($password) && !empty($fname) && !empty($lname)) {
 		//save to database
-		$query = "insert into eclectic_eye_login (username,password,firstname,lastname) values ('$user_name','$password','$fname','$lname',)";
+		$query = "insert into users (username,password,firstname,lastname) values ('$user_name','$password','$fname','$lname',)";
 		mysqli_query($con, $query);
 		//bring to login page on success
 		header("Location: login-page.php");
