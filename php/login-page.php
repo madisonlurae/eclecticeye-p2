@@ -39,7 +39,7 @@ session_start();
         } else {
             echo "Please fill all fields";
         }
-}
+    }
 ?>
 
 
@@ -82,7 +82,7 @@ session_start();
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br> 
             <button id="login-button" type="submit">Login</button>
-            <button id="register-button" type="submit">New? Create Account</button>
+            
         </form>      
     </div>
 </body>
