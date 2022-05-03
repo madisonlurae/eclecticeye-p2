@@ -87,7 +87,7 @@ session_start();
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br> 
             <button id="login-button" type="submit">Login</button>
-            <a href="/register-page.php"><button id="register-button">New? Create Account</button></a>
+            <a href="register-page.php" id="register-button">New? Create Account</a>
         </form>      
     </div>
 </body>
