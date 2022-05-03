@@ -4,7 +4,7 @@ session_start();
 
 $host = "localhost";
 $user = "root";
-$password = "pandabear";
+$password = "";
 $dbname = "eclectic_eye_login";
 
 $con = mysqli_connect($host, $user, $password, $dbname);
