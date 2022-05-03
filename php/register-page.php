@@ -32,10 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <head>
     <title>Eclectic Eye</title>
-    <link rel="stylesheet" href="/css/sharedstyle.css">
-    <link rel="stylesheet" href="/css/loginstyle.css">
+    <link rel="stylesheet" href="../css/sharedstyle.css">
+    <link rel="stylesheet" href="../css/loginstyle.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" type="image/jpg" href="/imgs/eclectic-eye-logo-icon.jpg"/>
+    <link rel="shortcut icon" type="image/jpg" href="../imgs/eclectic-eye-logo-icon.jpg"/>
     <script src="js/javascript.js"></script>
 </head>
 

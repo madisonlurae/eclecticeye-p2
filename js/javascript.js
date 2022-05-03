@@ -10,8 +10,15 @@ You could highlight incorrect elements with a red boarder.
 
 C4. Create a password reset. Your user information should be stored in the database and updated OR may be processed in a PHP page and simply displayed to users.
 
-C5. Users should be able to log out.
-This can be accomplished with a "Logout" button that displays a PHP page that states the user is logged out OR remove the user from the database.
+
+1. You should have a minimum of two tables with a PK/FK relationship. They must have a 
+1:M relationship - you may add unlimited additional tables if you wish. 
+2. The database should form a functional part of your website that makes sense for your 
+websites’ context. For example, if you have food website, you could allow customers to 
+create orders for food. If you are not sure what to do, talk to your professor. 
+3. Your website should allow for the addition, display and deletion of information from the 
+database. 
+
 
 D5. A Javascript object
 */

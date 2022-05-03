@@ -7,5 +7,5 @@ if (isset($_SESSION['user'])) {
 	unset($_SESSION['user']);
 }
 
-header("Location: ../index.html");
+header("Location: logout-success.php");
 die;
