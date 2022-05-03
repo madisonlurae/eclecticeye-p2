@@ -89,10 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <!--this will echo the regex error msg-->
             <?php
                 if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
-                    echo "Password requirements not met:"; break;
-                    echo "at least one letter"; break;
-                    echo "at least one digit"; break;
-                    echo "only use special chars @#-_$%^&+=§!?"; break;
+                    echo "Password requirements not met:";
+                    echo "at least one letter"; 
+                    echo "at least one digit";
+                    echo "only use special chars @#-_$%^&+=§!?";
                     echo "between 5 and 20 characters";
                 }
             ?><br><br>
