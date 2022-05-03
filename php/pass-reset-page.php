@@ -20,7 +20,7 @@ session_start();
                 header("Location: pass-reset-page.php?regmsg=failed");
             } else {
                 //save to database
-                $query = "update user set password='$new' where username='$name'";
+                $query = "update users set password='$new' where username='$name'";
                 mysqli_query($con, $query);
                 //bring to account page on success
                 header("Location: ../account.html");
