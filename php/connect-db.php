@@ -3,7 +3,7 @@
 session_start();
 
 $host = "localhost";
-$user = "onyx";
+$user = "root";
 $password = "pandabear";
 $dbname = "eclectic_eye_login";
 
