@@ -5,8 +5,7 @@ session_start();
     include("connect-db.php");
 
     //declaring global var so username can be pulled in other files
-    $user_data;
-    $_SESSION['user'];
+    $username_global;
 
     //first things first, if already logged in, redirect to account page 
     if (!isset($_SESSION['user'])) {
@@ -35,6 +34,7 @@ session_start();
                     if ($user_data['password'] === $password) {
                         //start session and redirect
                         $_SESSION['user'] = $user_data['username'];
+                        $username_global = $user_data['username'];
                         header("Location: login-success.php");
                         die;
                     } else {
