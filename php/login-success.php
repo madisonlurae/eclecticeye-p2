@@ -17,9 +17,8 @@ $name = $_SESSION['user'];
 
 	<h1>Login Successful!</h1><br>
 
-	<p>Hello!</p>
-	<?php echo $name;?>
-
+	<p>Hello, <?php echo $name;?>!</p>
+	
 	<p>Redirecting to our home page, just a moment...</p>
 
 	<?php 

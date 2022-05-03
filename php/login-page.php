@@ -4,7 +4,7 @@ session_start();
 
     include("connect-db.php");
 
-    //declaring global var
+    //declaring global var so username can be pulled in other files
     $user_data;
     $_SESSION['user'];
 
@@ -72,7 +72,7 @@ session_start();
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../about.html">About</a>
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../contact.html">Contact</a>
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../gallery.html">Gallery</a>
-            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../purchaseform.html">Custom Candle Form</a>
+            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="purchaseform.php">Custom Candle Form</a>
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="login-page.php">Account</a>
         </div>
     </div>
@@ -92,6 +92,11 @@ session_start();
                     echo "Please fill all fields";
                 }
             ?><br><br>
+             <?php
+                if (isset($_GET["loginmsg"]) && $_GET["loginmsg"] == 'failed') {
+                    echo "Must be logged in to order";
+                }
+            ?>
             <label>Username</label>
             <input type="text" name="user_name" placeholder="Username"><br>
             <!--this will echo the invalid username error msg-->

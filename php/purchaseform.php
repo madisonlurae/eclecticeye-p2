@@ -4,6 +4,13 @@ session_start();
 
     include("connect-db.php");
 
+    //must be logged in to order 
+    if (isset($_SESSION['user'])) {
+        header("Location: login-page.php?loginmsg=failed");
+    }
+
+    $userFK = $_SESSION['user'];
+
     //make sure something was posted
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //variables for the provided user, pass, first name, and last name
