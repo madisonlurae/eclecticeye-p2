@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($result && mysqli_num_rows($result) > 0) {
             header("Location: register-page.php?takenmsg=failed");
         } //check password against regex
-        else if (!preg_match('^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,20}$',$password)) {
+        else if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,20}$/',$password)) {
             header("Location: register-page.php?regmsg=failed");
         } else {
             //save to database
