@@ -7,8 +7,8 @@ $user = "root";
 $password = "";
 $dbname = "eclectic-eye-login";
 
-$connect = mysqli_connect($host, $user, $password,$dbname);
+$con = mysqli_connect($host, $user, $password,$dbname);
 //check connection
-if (!$connect) {
+if (!$con) {
   die("Connection failed");
 }

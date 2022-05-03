@@ -3,11 +3,11 @@
 session_start();
 
 include("connect-db.php");
-include("functions.php");
 
-//make sure something was posted
+//make sure form was posted
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//variables for the provided user and pass
+    echo "posted";
 	$user_name = $_POST['user_name'];
 	$password = $_POST['password'];
 
