@@ -4,6 +4,8 @@ session_start();
 
     include("connect-db.php");
 
+    ini_set('display_errors', 1);
+
     //make sure form was posted
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //variables for the provided user and pass
