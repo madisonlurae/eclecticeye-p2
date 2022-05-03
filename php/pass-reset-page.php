@@ -16,7 +16,7 @@ session_start();
         //make sure fields were not empty
         if (!empty($new)) {
              //check password against regex
-            if (!preg_match("^(?=[^\d_].*?\d)\w(\w|[!@#$%]){4,20}$",$new)) {
+            if (!preg_match('/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/', $new)) {
                 header("Location: pass-reset-page.php?regmsg=failed");
             } else {
                 //save to database
@@ -55,7 +55,7 @@ session_start();
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../contact.html">Contact</a>
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../gallery.html">Gallery</a>
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../purchaseform.html">Custom Candle Form</a>
-            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="login-page.php">Login</a>
+            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="login-page.php">Account</a>
         </div>
     </div>
     <div id="menu-slide">
@@ -81,11 +81,10 @@ session_start();
             <!--this will echo the regex error msg-->
             <?php
                 if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
-                    echo "Password must:\n";
-                    echo "Be 5-20 characters long\n";
-                    echo "Have at least one digit\n";
-                    echo "Start with a letter\n";
-                    echo "Only contain special characters ! @ # $ %\n";
+                    echo "at least one lowercase char"; break;
+                    echo "at least one uppercase char"; break;
+                    echo "at least one digit"; break;
+                    echo "at least one special sign of @#-_$%^&+=§!?"; break;
                 }
             ?><br><br>
             <button id="login-button" type="submit">Change</button>
