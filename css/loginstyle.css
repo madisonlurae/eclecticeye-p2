@@ -23,7 +23,7 @@ label {
 input {
     display: block;
     border: 2px solid whitesmoke;
-    width: 95%;
+    width: auto;
     padding: 10px;
     margin: 10px;
 }

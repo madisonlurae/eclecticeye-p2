@@ -14,16 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	//make sure fields were not empty
 	if (!empty($user_name) && !empty($password) && !empty($fname) && !empty($lname)) {
-        //check password against regex
-        if (!preg_match("^(?=[^\d_].*?\d)\w(\w|[!@#$%]){4,20}$",$password)) {
+        //check if username is already taken
+        $query = "select * from users where username = '$user_name' limit 1";
+        $result = mysqli_query($con, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            header("Location: register-page.php?takenmsg=failed");
+        } //check password against regex
+        else if (!preg_match("^(?=[^\d_].*?\d)\w(\w|[!@#$%]){4,20}$",$password)) {
             header("Location: register-page.php?regmsg=failed");
+        } else {
+            //save to database
+            $query = "INSERT INTO `users` (`username`, `password`, `firstname`, `lastname`) VALUES ('$user_name', '$password', '$fname', '$lname')";
+            mysqli_query($con, $query);
+            //bring to login page on success
+            header("Location: login-page.php");
+            die;
         }
-		//save to database
-		$query = "INSERT INTO `users` (`username`, `password`, `firstname`, `lastname`) VALUES ('$user_name', '$password', '$fname', '$lname')";
-		mysqli_query($con, $query);
-		//bring to login page on success
-		header("Location: login-page.php");
-		die;
 	} else {
 		header("Location: register-page.php?fieldmsg=failed");
 	}
@@ -70,21 +76,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
                     echo "Please fill all fields";
                 }
-            ?><br>
+            ?><br><br>
             <label>User Name</label>
             <input type="text" name="user_name" placeholder="Username"><br>
+            <?php
+                if (isset($_GET["takenmsg"]) && $_GET["takenmsg"] == 'failed') {
+                    echo "Username is already taken";
+                }
+            ?><br><br>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br>
             <!--this will echo the regex error msg-->
             <?php
                 if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
-                    echo "Password must:\n
-                    Be 5-20 characters long\n
-                    Have at least one digit\n
-                    Start with a letter\n
-                    Only contain special characters ! @ # $ %\n";
+                    echo "Password must:\n";
+                    echo "Be 5-20 characters long\n";
+                    echo "Have at least one digit\n";
+                    echo "Start with a letter\n";
+                    echo "Only contain special characters ! @ # $ %\n";
                 }
-            ?><br>
+            ?><br><br>
             <label>First Name</label>
             <input type="text" name="fname" placeholder="First Name"><br>
             <label>Last Name</label>

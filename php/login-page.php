@@ -87,7 +87,7 @@ session_start();
                 if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
                     echo "Please fill all fields";
                 }
-            ?><br>
+            ?><br><br>
             <label>Username</label>
             <input type="text" name="user_name" placeholder="Username"><br>
             <!--this will echo the invalid username error msg-->
@@ -95,7 +95,7 @@ session_start();
                 if (isset($_GET["usrmsg"]) && $_GET["usrmsg"] == 'failed') {
                     echo "Invalid username";
                 }
-            ?><br>
+            ?><br><br>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br> 
             <!--this will echo the incorrect password error msg-->
@@ -103,7 +103,7 @@ session_start();
                 if (isset($_GET["passmsg"]) && $_GET["passmsg"] == 'failed') {
                     echo "Password is incorrect";
                 }
-            ?><br>
+            ?><br><br>
             <button id="login-button" type="submit">Login</button>
             <a href="register-page.php"><button id="register-button" type="button">New? Create Account</button></a>
         </form>      
