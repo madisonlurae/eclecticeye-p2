@@ -1,7 +1,5 @@
 /*
 
-1. You should have a minimum of two tables with a PK/FK relationship. They must have a 
-1:M relationship - you may add unlimited additional tables if you wish. 
 2. The database should form a functional part of your website that makes sense for your 
 websites’ context. For example, if you have food website, you could allow customers to 
 create orders for food. If you are not sure what to do, talk to your professor. 
@@ -50,6 +48,7 @@ if (alerted != 'yes') {
         localStorage.setItem('alerted','no');
     }
 }*/
+foriegn
 
 
 //BUTTON FADE OUT

@@ -16,6 +16,7 @@ include("connect-db.php");
 	<h1>Login Successful!</h1><br>
 
 	<p>Hello!</p>
+	<?php echo session_id();?>
 
 	<p>Redirecting to our home page, just a moment...</p>
 
