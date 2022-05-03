@@ -34,15 +34,15 @@ session_start();
                         header("Location: login-success.php");
                         die;
                     } else {
-                        echo "Invalid password";
+                        header("Location: login-page.php?passmsg=failed");
                     }
                 }
             }
             //reaches here if username is not found
-            echo "Invalid username";
+            header("Location: login-page.php?usrmsg=failed");
         //reaches here if fields were empty
         } else {
-            echo "Please fill all fields";
+            header("Location: login-page.php?fieldmsg=failed");
         }
     }
 ?>
@@ -82,12 +82,30 @@ session_start();
     <div class="flex-parent">
         <form method="post">
             <h2>Login</h2>
+            <!--this will echo the fields are empty error msg-->
+            <?php
+                if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
+                    echo "Please fill all fields";
+                }
+            ?>
             <label>Username</label>
             <input type="text" name="user_name" placeholder="Username"><br>
+            <!--this will echo the invalid username error msg-->
+            <?php
+                if (isset($_GET["usrmsg"]) && $_GET["usrmsg"] == 'failed') {
+                    echo "Invalid username";
+                }
+            ?>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br> 
+            <!--this will echo the incorrect password error msg-->
+            <?php
+                if (isset($_GET["passmsg"]) && $_GET["passmsg"] == 'failed') {
+                    echo "Password is incorrect";
+                }
+            ?>
             <button id="login-button" type="submit">Login</button>
-            <a href="register-page.php" id="register-button">New? Create Account</a>
+            <button type="button"><a href="register-page.php" id="register-button">New? Create Account</a></button>
         </form>      
     </div>
 </body>

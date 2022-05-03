@@ -14,6 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	//make sure fields were not empty
 	if (!empty($user_name) && !empty($password) && !empty($fname) && !empty($lname)) {
+        //check password against regex
+        if (!preg_match("^(?=[^\d_].*?\d)\w(\w|[!@#$%]){4,20}$",$password)) {
+            header("Location: register-page.php?regmsg=failed");
+        }
 		//save to database
 		$query = "INSERT INTO `users` (`username`, `password`, `firstname`, `lastname`) VALUES ('$user_name', '$password', '$fname', '$lname')";
 		mysqli_query($con, $query);
@@ -21,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		header("Location: login-page.php");
 		die;
 	} else {
-		echo "Please fill all fields";
+		header("Location: register-page.php?fieldmsg=failed");
 	}
 }
 ?>
@@ -61,10 +65,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="flex-parent">
 		<form method="post">
             <h2>Register</h2>
+            <!--this will echo the fields are empty error msg-->
+            <?php
+                if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
+                    echo "Please fill all fields";
+                }
+            ?>
             <label>User Name</label>
             <input type="text" name="user_name" placeholder="Username"><br>
             <label>Password</label>
             <input type="password" name="password" placeholder="Password"><br>
+            <!--this will echo the regex error msg-->
+            <?php
+                if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
+                    echo "Password must:\n
+                    Be 5-20 characters long\n
+                    Have at least one digit\n
+                    Start with a letter\n
+                    Only contain special characters ! @ # $ %\n";
+                }
+            ?>
             <label>First Name</label>
             <input type="text" name="fname" placeholder="First Name"><br>
             <label>Last Name</label>

@@ -15,7 +15,7 @@ include("connect-db.php");
 
 	<h1>Logout Successful!</h1>
 
-	Until next time!, <?php echo $user_data['username']; ?>!
+	<p>Until next time!</p>
 
 	<p>Redirecting to our home page, just a moment...</p>
 
