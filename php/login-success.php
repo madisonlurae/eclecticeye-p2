@@ -15,12 +15,12 @@ include("connect-db.php");
 
 	<h1>Login Successful!</h1>
 
-	<p>Hello, <?php echo $user_data['username']; ?>!</p>
+	<p>Hello, <?php echo $user_data['user_name']; ?>!</p>
 
 	<p>Redirecting to our home page, just a moment...</p>
 
 	<?php 
-	
-	header("Refresh: 10, Location: ../index.html"); ?>
+		header( "refresh:5;url=../index.html" );
+	?>
 </body>
 </html>
