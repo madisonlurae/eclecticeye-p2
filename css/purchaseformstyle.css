@@ -1,4 +1,8 @@
-.order-form {
+/*
+Contains CSS formatting for the purchaseform.php file
+Author: Madison Bennett
+Date Created: April 10th 2022
+*/.order-form {
     display: flex;
     flex-direction: column;
 }

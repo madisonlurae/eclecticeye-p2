@@ -1,19 +1,7 @@
 /*
-
-3. Your website should allow for the addition, display and deletion of information from the 
-database. 
-
-final: the report
-
-6. Your site must support distinct layouts for large and small screens using media queries. 
-Use comments to note where you completed this activity.
-You may do this in a variety of ways. Consider using this to control images.
-
-D5. A Javascript object
-
-C3. --Your login must account for errors----. 
-You must also change the style of the incorrect form element.
-You could highlight incorrect elements with a red boarder.
+All javascript is located in this file
+Author: Madison Bennett
+Date Created: April 10th 2022
 */
 
 //TIME OF DAY ALERT
