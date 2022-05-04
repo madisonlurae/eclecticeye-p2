@@ -71,11 +71,11 @@ session_start();
         <h1>Custom Candle Form</h1>
          <!--this will echo the fields are empty error msg-->
          <?php
-                if (isset($_GET["fieldsmsg"]) && $_GET["fieldsmsg"] == 'failed') {
-                    echo "Please fill all fields";
-                }
-            ?><br><br>
-        <form class="order-form">
+             if (isset($_GET["fieldsmsg"]) && $_GET["fieldsmsg"] == 'failed') {
+                echo "Please fill all fields";
+            }
+        ?><br><br>
+        <form method="post" class="order-form">
             <!--Choose a candle from pre set collections-->
             <h2 id="needs-top-padding">Please select from one of our collections to act as a base for your candle!</h2>
             
