@@ -24,7 +24,7 @@ session_start();
         if (!empty($collection) && !empty($size) && !empty($color) && !empty($scent) && !empty($crystal)) {
              //save to database
              //order_id auto increments, insert as default
-             $query = "INSERT INTO `orders` VALUES (DEFAULT, '$userFK', '$collection', '$size', '$color', '$scent', '$crystal')";
+             $query = "INSERT INTO `orders` VALUES (NULL, '$userFK', '$collection', '$size', '$color', '$scent', '$crystal')";
              mysqli_query($con, $query);
              //bring to account page on success
              header("Location: ../account.html");
