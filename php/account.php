@@ -32,8 +32,8 @@
 <body>
     <div class="flex-parent">
         <div id="button-box">
-            <a href="php/pass-reset-page.php"><button id="register-button">Change Password</button></a>
-            <a href="php/config-logout.php"><button id="register-button">Logout</button></a>
+            <a href="pass-reset-page.php"><button id="register-button">Change Password</button></a>
+            <a href="config-logout.php"><button id="register-button">Logout</button></a>
         </div>
         <h1>My Orders</h1>
             <!--gather orders data-->
