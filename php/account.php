@@ -41,7 +41,7 @@
                 $name = $_SESSION['user'];
 
                 include("connect-db.php");
-                $query = "SELECT order_id, base, size, color, scent, crystals FROM orders WHERE  = '$name'";
+                $query = "SELECT order_id, base, size, color, scent, crystals FROM orders WHERE user_id = '$name'";
                 $result = mysqli_query($con, $query);
             ?>
             <!--make the table-->
