@@ -1,30 +1,3 @@
-<?php
-    
-session_start();
-
-include("connect-db.php");
-//fetch con from connect-db to function can access it
-$con;
-
-    $tableName="orders";
-    $columns= ['order_id', 'user_id','base', 'size','color','scent','crystals'];
-
-    $tableData = fetch_data($con, $tableName, $columns);
-
-    function fetch_data($con, $tableName, $columns) {
-        $columnName = implode(", ", $columns);
-        $query = "SELECT ".$columnName." FROM $tableName"." ORDER BY order_id DESC";
-        $result = mysqli_query($con, $query);
-        if ($result && mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            $msg = $row;
-        } else {
-            $msg= "No Data Found"; 
-        }
-        return $msg;
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -63,37 +36,38 @@ $con;
             <h1>My Orders</h1>
             <!--gather orders data-->
             <?php
-                $query = "SELECT ('base', 'size','color','scent','crystals') FROM 'orders'";
+                session_start();
+
+                include("connect-db.php");
+                $query = "SELECT order_id, base, size, color, scent, crystals FROM orders";
                 $result = mysqli_query($con, $query);
             ?>
-            <!--create table headers-->
-            <table cellspacing="0" cellpadding="10">
-            <tr>
-                <th>Base</th>
-                <th>Size</th>
-                <th>Color</th>
-                <th>Scent</th>
-                <th>Crystals</th>
-            </tr>
-            <!--while there is data to fetch, fill the table-->
-            <?php
-                if (mysqli_num_rows($result) > 0) {
-                    while($data = mysqli_fetch_assoc($result)) { ?>
-                    <!--fill table-->
-                    <tr>
-                        <td><?php echo $data['base']; ?> </td>
-                        <td><?php echo $data['size']; ?> </td>
-                        <td><?php echo $data['color']; ?> </td>
-                        <td><?php echo $data['scent']; ?> </td>
-                        <td><?php echo $data['crystals']; ?> </td>
-                     <tr>
-                    
-                    <?php }} else { ?>
-                        <!--if data is not found-->
-                        <tr>
-                        <td colspan="8">No data found</td>
-                        </tr>
-                    <?php } ?> <!--close else-->
+            <!--make the table-->
+            <table>
+                <tr>
+                    <th>Order No</th>
+                    <th>Base</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th>Scent</th>
+                    <th>Crystals</th>
+                </tr>
+                <!--get data from rows-->
+                <?php //loop until run out of rows
+                    while ($rows = mysqli_fetch_assoc($result)) {
+                ?>
+                <tr>
+                    <!--get data from each row and column-->
+                    <td><?php echo $rows['order_id'];?></td>
+                    <td><?php echo $rows['base'];?></td>
+                    <td><?php echo $rows['size'];?></td>
+                    <td><?php echo $rows['color'];?></td>
+                    <td><?php echo $rows['scent'];?></td>
+                    <td><?php echo $rows['crystals'];?></td>
+                </tr>
+                <?php
+                    }
+                ?>
             </table>
         </div>
     </div>
