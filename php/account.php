@@ -30,10 +30,11 @@
 
 <body>
     <div class="flex-parent">
-        <a href="php/pass-reset-page.php"><button id="register-button">Change Password</button></a>
-        <a href="php/config-logout.php"><button id="register-button">Logout</button></a>
-        <div id="orders-display">
-            <h1>My Orders</h1>
+        <div id="button-box">
+            <a href="php/pass-reset-page.php"><button id="register-button">Change Password</button></a>
+            <a href="php/config-logout.php"><button id="register-button">Logout</button></a>
+        </div>
+        <h1>My Orders</h1>
             <!--gather orders data-->
             <?php
                 session_start();
@@ -69,7 +70,6 @@
                     }
                 ?>
             </table>
-        </div>
     </div>
 </body>
 

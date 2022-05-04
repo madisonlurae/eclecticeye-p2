@@ -1,8 +1,5 @@
 /*
 
-2. The database should form a functional part of your website that makes sense for your 
-websites’ context. For example, if you have food website, you could allow customers to 
-create orders for food. If you are not sure what to do, talk to your professor. 
 3. Your website should allow for the addition, display and deletion of information from the 
 database. 
 
