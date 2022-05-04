@@ -81,10 +81,10 @@ session_start();
             <!--this will echo the regex error msg-->
             <?php
                 if (isset($_GET["regmsg"]) && $_GET["regmsg"] == 'failed') {
-                    echo "Password requirements not met: \r\n";
-                    echo "at least one letter";
-                    echo "at least one digit";
-                    echo "only use special chars @#-_$%^&+=§!?";
+                    echo "Password requirements not met:";echo "<br>";
+                    echo "at least one letter";echo "<br>";
+                    echo "at least one digit";echo "<br>";
+                    echo "only use special chars @#-_$%^&+=§!?";echo "<br>";
                     echo "between 5 and 20 characters";
                 }
             ?><br><br>
