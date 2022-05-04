@@ -21,7 +21,7 @@ session_start();
         $crystal = $_POST['crystal'];
 
         //make sure fields were not empty
-        //if (!empty($collection) && !empty($size) && !empty($color) && !empty($scent) && !empty($crystal)) {
+        if (!empty($collection) && !empty($size) && !empty($color) && !empty($scent) && !empty($crystal)) {
              //save to database
              //order_id auto increments, insert as default
              $query = "INSERT INTO `orders` VALUES (DEFAULT, '$userFK', '$collection', '$size', '$color', '$scent', '$crystal')";
@@ -29,9 +29,9 @@ session_start();
              //bring to account page on success
              header("Location: ../account.html");
              die;
-        //} else { //something was left blank
+        } else { //something was left blank
 		    header("Location: purchaseform.php?fieldsmsg=failed");
-	    //}
+	    }
     } 
 
 ?>
@@ -41,10 +41,10 @@ session_start();
 
 <head>
     <title>Eclectic Eye</title>
-    <link rel="stylesheet" href="/css/sharedstyle.css">
-    <link rel="stylesheet" href="/css/purchaseformstyle.css">
+    <link rel="stylesheet" href="../css/sharedstyle.css">
+    <link rel="stylesheet" href="../css/purchaseformstyle.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" type="image/jpg" href="/imgs/eclectic-eye-logo-icon.jpg"/>
+    <link rel="shortcut icon" type="image/jpg" href="../imgs/eclectic-eye-logo-icon.jpg"/>
     <script src="../js/javascript.js"></script>
 </head>
 
@@ -52,10 +52,10 @@ session_start();
     <div id="menu">
         <div id="menu-bar-logo"><img id="menu-bar-logo" src="/imgs/eclectic-eye-logo-text.jpg" alt="eclectic eye logo"></div>
         <div id="nav-bar">
-            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="/index.html">Home</a>
-            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="/about.html">About</a>
-            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="/contact.html">Contact</a>
-            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="/gallery.html">Gallery</a>
+            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../index.html">Home</a>
+            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../about.html">About</a>
+            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../contact.html">Contact</a>
+            <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="../gallery.html">Gallery</a>
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="purchaseform.php">Custom Candle Form</a>
             <a class="nav-link" onmouseover="fadeout(this);" onmouseleave="fadein(this);" href="login-page.php">Account</a>
         </div>
