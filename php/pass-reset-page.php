@@ -5,7 +5,7 @@ session_start();
     include("connect-db.php");
 
     //get username
-    $name = $_SESSION['user'];
+    $name = $username_global;
 
     //make sure form was posted
     if ($_SERVER['REQUEST_METHOD'] == "POST") {

@@ -92,11 +92,7 @@ session_start();
                     echo "Please fill all fields";
                 }
             ?><br><br>
-             <?php
-                if (isset($_GET["loginmsg"]) && $_GET["loginmsg"] == 'failed') {
-                    echo "Must be logged in to order";
-                }
-            ?>
+     
             <label>Username</label>
             <input type="text" name="user_name" placeholder="Username"><br>
             <!--this will echo the invalid username error msg-->
