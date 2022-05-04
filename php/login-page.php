@@ -9,7 +9,7 @@ session_start();
 
     //first things first, if already logged in, redirect to account page 
     if (isset($_SESSION['user'])) {
-        header("Location: ../account.html");
+        header("Location: account.php");
     }
 
     //make sure form was posted

@@ -27,7 +27,7 @@ session_start();
              $query = "INSERT INTO `orders` VALUES (NULL, '$userFK', '$collection', '$size', '$color', '$scent', '$crystal')";
              mysqli_query($con, $query);
              //bring to account page on success
-             header("Location: ../account.html");
+             header("Location: account.php");
              die;
         } else { //something was left blank
 		    header("Location: purchaseform.php?fieldsmsg=failed");

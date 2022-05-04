@@ -23,7 +23,7 @@ session_start();
                 $query = "update users set password='$new' where username='$name'";
                 mysqli_query($con, $query);
                 //bring to account page on success
-                header("Location: ../account.html");
+                header("Location: account.php");
                 die;
             }
         //reaches here if fields were empty
