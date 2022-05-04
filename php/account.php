@@ -11,7 +11,7 @@ $con;
 
     $tableData = fetch_data($con, $tableName, $columns);
 
-    function fetch_data($db, $tableName, $columns) {
+    function fetch_data($con, $tableName, $columns) {
         $columnName = implode(", ", $columns);
         $query = "SELECT ".$columnName." FROM $tableName"." ORDER BY order_id DESC";
         $result = mysqli_query($con, $query);
