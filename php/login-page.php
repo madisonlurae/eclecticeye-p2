@@ -5,7 +5,7 @@ session_start();
     include("connect-db.php");
 
     //declaring global var so username can be pulled in other files
-    $username_global;
+    $_SERVER['user'];
 
     //first things first, if already logged in, redirect to account page 
     if (isset($_SESSION['user'])) {
@@ -34,7 +34,6 @@ session_start();
                     if ($user_data['password'] === $password) {
                         //start session and redirect
                         $_SESSION['user'] = $user_data['username'];
-                        $username_global = $user_data['username'];
                         header("Location: login-success.php");
                         die;
                     } else {
@@ -90,6 +89,9 @@ session_start();
             <?php
                 if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
                     echo "Please fill all fields";
+                }
+                if (isset($_GET["loginmsg"]) && $_GET["loginmsg"] == 'failed') {
+                    echo "Must be logged in to order";
                 }
             ?><br><br>
      
