@@ -63,7 +63,7 @@ $con;
             <h1>My Orders</h1>
             <!--gather orders data-->
             <?php
-                $query = "SELECT 'base', 'size','color','scent','crystals' FROM 'orders'";
+                $query = "SELECT ('base', 'size','color','scent','crystals') FROM 'orders'";
                 $result = mysqli_query($con, $query);
             ?>
             <!--create table headers-->
