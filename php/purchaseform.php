@@ -24,13 +24,13 @@ session_start();
         if (!empty($collection) && !empty($size) && !empty($color) && !empty($scent) && !empty($crystal)) {
              //save to database
              //order_id auto increments, insert as default
-             $query = "INSERT INTO `orders` VALUES (DEFAULT, 'Admin', 'Leo', 'Small', 'Base', 'Lavender', 'Onyx')";
+             $query = "INSERT INTO `orders` VALUES (DEFAULT, '$userFK', '$collection', '$size', '$color', '$scent', '$crystal')";
              mysqli_query($con, $query);
-             //bring to login page on success
-             header("Location: login-page.php");
+             //bring to account page on success
+             header("Location: ../account.html");
              die;
         } else { //something was left blank
-		    header("Location: purchaseform.php?fieldmsg=failed");
+		    header("Location: purchaseform.php?fieldsmsg=failed");
 	    }
     } 
 
@@ -69,16 +69,15 @@ session_start();
 <body>
     <div class="flex-parent">
         <h1>Custom Candle Form</h1>
-        <form class="order-form">
-            <!--Choose a candle from pre set collections-->
-            <h2 id="needs-top-padding">Please select from one of our collections to act as a base for your candle!</h2>
-
-            <!--this will echo the fields are empty error msg-->
-            <?php
-                if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
+         <!--this will echo the fields are empty error msg-->
+         <?php
+                if (isset($_GET["fieldsmsg"]) && $_GET["fieldsmsg"] == 'failed') {
                     echo "Please fill all fields";
                 }
             ?><br><br>
+        <form class="order-form">
+            <!--Choose a candle from pre set collections-->
+            <h2 id="needs-top-padding">Please select from one of our collections to act as a base for your candle!</h2>
             
             <div class="form-group">
                 <p><label>Zodiac Collection</label></p>
