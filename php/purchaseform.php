@@ -21,7 +21,7 @@ session_start();
         $crystal = $_POST['crystal'];
 
         //make sure fields were not empty
-        if (!empty($collection) && !empty($size) && !empty($color) && !empty($scent) && !empty($crystal)) {
+        //if (!empty($collection) && !empty($size) && !empty($color) && !empty($scent) && !empty($crystal)) {
              //save to database
              //order_id auto increments, insert as default
              $query = "INSERT INTO `orders` VALUES (DEFAULT, '$userFK', '$collection', '$size', '$color', '$scent', '$crystal')";
@@ -29,9 +29,9 @@ session_start();
              //bring to account page on success
              header("Location: ../account.html");
              die;
-        } else { //something was left blank
+        //} else { //something was left blank
 		    header("Location: purchaseform.php?fieldsmsg=failed");
-	    }
+	    //}
     } 
 
 ?>
