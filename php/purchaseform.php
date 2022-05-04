@@ -30,7 +30,7 @@ session_start();
              header("Location: login-page.php");
              die;
         } else { //something was left blank
-		    header("Location: register-page.php?fieldmsg=failed");
+		    header("Location: purchaseform.php?fieldmsg=failed");
 	    }
     } 
 
@@ -72,6 +72,13 @@ session_start();
         <form class="order-form">
             <!--Choose a candle from pre set collections-->
             <h2 id="needs-top-padding">Please select from one of our collections to act as a base for your candle!</h2>
+
+            <!--this will echo the fields are empty error msg-->
+            <?php
+                if (isset($_GET["fieldmsg"]) && $_GET["fieldmsg"] == 'failed') {
+                    echo "Please fill all fields";
+                }
+            ?><br><br>
             
             <div class="form-group">
                 <p><label>Zodiac Collection</label></p>

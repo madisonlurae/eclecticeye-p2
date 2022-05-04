@@ -8,7 +8,7 @@ session_start();
     $username_global;
 
     //first things first, if already logged in, redirect to account page 
-    if (!isset($_SESSION['user'])) {
+    if (isset($_SESSION['user'])) {
         header("Location: ../account.html");
     }
 
