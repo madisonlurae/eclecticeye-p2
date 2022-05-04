@@ -5,7 +5,7 @@ session_start();
     include("connect-db.php");
 
     //must be logged in to order 
-    if (isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user'])) {
         header("Location: login-page.php?loginmsg=failed");
     }
 

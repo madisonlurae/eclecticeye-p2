@@ -4,7 +4,7 @@ session_start();
 
 include("connect-db.php");
 
-$name = $_SESSION['user'];
+$name = $username_global;
 
 ?>
 
