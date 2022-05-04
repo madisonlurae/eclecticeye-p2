@@ -9,7 +9,7 @@ session_start();
         header("Location: login-page.php?loginmsg=failed");
     }
 
-    $userFK = $username_global;
+    $userFK = $_SESSION['user'];
 
     //make sure something was posted
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
